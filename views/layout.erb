@@ -3,15 +3,33 @@
 <head>
   <meta charset="utf-8">
   <title><%= @title %></title>
+  
   <% if desc = (@meta['description'] || nil) %>
     <meta name="description" content="<%= Rack::Utils.escape_html(desc) %>">
   <% end %>
+  
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  
   <link rel="stylesheet" href="/css/colors.css">
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/reboot.css">
   <link rel="stylesheet" href="/css/skins.css">
   <link rel="stylesheet" href="/css/utilities.css">
+
+  <!-- Prism core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.min.css" />
+
+  <script>
+    window.Prism = window.Prism || {};
+    Prism.plugins = Prism.plugins || {};
+    Prism.plugins.autoloader = {
+      languages_path: "https://cdn.jsdelivr.net/npm/prismjs/components/"
+    };
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"></script>
+
 </head>
 <body>
   <div class="wrapper">
