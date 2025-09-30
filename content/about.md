@@ -2,7 +2,7 @@
 title: About
 ---
 
-# About?
+# About
 
 This version is ~30 lines of Ruby plus a layout.
 
