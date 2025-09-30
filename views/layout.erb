@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title><%= @title %></title>
+  <% if desc = (@meta['description'] || nil) %>
+    <meta name="description" content="<%= Rack::Utils.escape_html(desc) %>">
+  <% end %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/css/colors.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/reboot.css">
+  <link rel="stylesheet" href="/css/skins.css">
+  <link rel="stylesheet" href="/css/utilities.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="outer">
+        <div class="inner spread-apart">
+          <div class="h1" style="color: var(--gray-50)">Logo</div>
+          <nav class="spread-apart">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/overview">Overview</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="wrap">
+      <div class="outer">
+        <div class="inner">
+          <%= @content %>
+        </div>
+      </div>
+    </main>
+    <footer class="wrap muted">
+      <div class="outer">
+        <div class="inner"><small>Powered by a tiny Ruby script ❤️</small></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
